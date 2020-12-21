@@ -10,7 +10,6 @@ body {
 }
 
 .card {
-  height: 600px;
   max-width: 600px;
   height: 400px;
   margin: 100px auto;
@@ -24,10 +23,13 @@ body {
   box-shadow: 3px 3px 20px hsl(218, 22%, 67%);
 }
 
+.sub-card {
+  padding: 40px;
+}
+
 .card-main {
   background-color: #ffffff;
   grid-area: main;
-  padding: 40px;
 }
 
 .card-main h1 {
@@ -50,7 +52,6 @@ body {
 .card-subscribe {
   background-color: hsl(179, 62%, 43%);
   grid-area: subscribe;
-  padding: 40px;
 }
 
 .card-subscribe h4,
@@ -93,7 +94,6 @@ body {
 .card-why {
   background-color: hsl(179, 47%, 52%);
   grid-area: why;
-  padding: 40px;
 }
 
 .card-why p {
@@ -111,4 +111,36 @@ body {
 
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 767px) {
+  .card {
+    max-width: 80%;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .card {
+    grid-template: 2fr 1fr 1fr / 100%;
+    grid-template-areas:
+      "main"
+      "subscribe"
+      "why";
+    height: 680px;
+  }
+
+  .sub-card {
+    padding: 25px;
+  }
+
+  .card-main h4 {
+    margin: 20px 0px;
+  }
+
+  .card-main p {
+    margin: 10px 0;
+    line-height: 25px;
+  }
 }
